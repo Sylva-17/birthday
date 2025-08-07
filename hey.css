@@ -1,0 +1,290 @@
+    
+    *{
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body{
+    background:#e5d4ef;
+   text-align:center;
+}
+
+
+
+button{
+  margin-top:150px;
+  width:200px;
+  height:40px;
+   background-color: #eebdc3; 
+  color: #5e3a50;            
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  background: linear-gradient(135deg, #eabacb, #f8cddc);
+  font-size:13px;
+  
+   backdrop-filter: blur(10px);
+    overflow: hidden;
+      transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #e1add2;
+  transform: scale(1.05);
+  border:2px solid white;
+ box-shadow: 0 0 12px #eabacb, 0 0 24px #f8cddc;
+ cursor: pointer;
+ }
+ 
+    button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.6), transparent 70%);
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+    }
+
+    button:hover::before {
+      top: -20%;
+      left: -20%;
+    }
+
+    span.icon {
+      display: inline-block;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover span.icon {
+      transform: rotate(10deg) scale(1.3);
+    }
+
+.container{
+  
+  margin:50px 100px;
+  padding:30px 20px;
+}
+h1, h3 {
+ color: #5e3a50;
+}
+
+
+
+#gateau{
+  
+  width:300px;
+  height:360px;
+  margin:auto;
+  margin-top:150px;
+  
+  display:none;
+  animation-delay:10s;
+}
+
+
+
+.plate{
+  background:#5e62a9;
+  width: 230px;
+  height: 10px;
+  border-radius: 0% 0% 50% 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:0px;
+  box-shadow: 50px 10px 11px rgba(0, 0, 0, 0.2);
+}
+    
+    @keyframes descend {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+    
+ .layer, .flame, .candle,
+.seclayer,
+.thlayer, .plate, .happy {
+  animation: descend 1s ease-out forwards;
+  opacity: 0; /* pour éviter qu'on les voie avant */
+}
+    
+    .layer {
+  animation-delay: 2s;
+}
+
+.seclayer {
+  animation-delay: 1.5s;
+}
+
+.thlayer {
+  animation-delay: 0.8s;
+}
+
+
+.candle, .flame{
+      animation-delay:2.5s;
+    }
+    
+.happy{
+  animation-delay:0.2s;
+}
+
+.cake{
+  margin-top:50px;
+  margin-bottom:1px;
+}
+
+  
+.layer{
+  background:#f2dde1;
+  width:130px;
+  height:40px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:0px;
+  margin-top:0px;
+  border-radius:50% 50% 0% 0% ;
+  
+}
+
+
+.seclayer{
+  background:#e094a0;
+  width:170px;
+  height:50px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 0px;
+  margin-bottom:0px;
+  border-radius: 25% 25% 0% 0%;
+}
+
+.thlayer{
+  background:#c45161;
+  width:209px;
+  height:60px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 0px;
+  margin-top:0px;
+  border-radius: 25% 25% 0% 0%
+}
+.caprasimo-regular {
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.candle{
+  background:white;
+  width:4px;
+  height:29px;
+  margin-left:auto;
+  margin-right:auto;
+  position: relative; 
+  top:50px;
+}
+
+.flame{
+  background:orange;
+  width:6px;
+  height:10px;
+  position: relative; 
+  top:-10px;
+}
+
+.flame2{
+  background:yellow;
+  width:3px;
+  height:6px;
+  position: relative; 
+  top:-17px;
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(1px) translateY(-2px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Animation sur la flamme orange */
+.flame {
+  animation: flame-flicker 1s infinite ease-in-out;
+  border-radius: 50% 50% 50% 50%; /* pour une forme plus naturelle */
+}
+
+/* Animation sur la flamme jaune plus petite */
+.flame2 {
+  animation: flame-flicker 1s infinite ease-in-out;
+  animation-delay: 0.3s; /* décalage pour un effet plus naturel */
+  border-radius: 50% 50% 50% 50%;
+}
+ /*la pre partie fini ici*/
+    
+
+    .firework {
+      position: absolute;
+      left: 50vw;
+      top: 60vh;
+      width: 4px;
+      height: 4px;
+      background: #fff0;
+      animation: shoot 0.4s ease-in forwards, explode 0.8s 0.4s ease-out forwards;
+    }
+    @keyframes shoot {
+      to {
+        transform: translateY(-250px);
+      }
+    }
+    @keyframes explode {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--c, #ff0);
+      opacity: 0.9;
+      transform: scale(1);
+      animation: burst 0.8s 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes burst {
+      from {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translate(var(--tx), var(--ty)) scale(0.8);
+        opacity: 0;
+      }
+    }
+    
+    
+    
+    
+body{
+  transition: background 1s ease-in-out;
+}
+.happy{
+  color:white;
+ -webkit-text-stroke: 2px #c8a2ff;
+  
+}
+    
